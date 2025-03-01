@@ -28,7 +28,28 @@ int bitXor(int x, int y){
 
 int tmin(void){
 
-    
+      return -128; 
+
+}
+
+int isTmax(int x){
+
+    if(~x + 1 == 128){
+        return 1
+    }   
+    return 0 
+
+}
+
+int allOddBits(int x){
+
+    unsigned mask = 0xAAAAAAAA;
+    if(x & mask != 0){
+        return 1;   
+
+    }
+    return 0;
+  
 
 }
 
@@ -38,10 +59,14 @@ int main(){
     printf("num1: ");
     scanf("%d", &x);
 
-    printf("nums: ");
+    printf("num2: ");
     scanf("%d", &y);
     
-    printf("%d", bitXor(x, y));
+    printf("bitXor: %d", bitXor(x, y));
+    printf("tmin: %d", tmin());
+    printf("isTmax %d", isTmax(x));
+    printf("allOddBits: %d", allOddBits(x));
+    
     
 
 }
